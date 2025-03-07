@@ -7,6 +7,7 @@ const APIKEY = "EACPPhqMH4hQwbyYWnkfuw==6eGCb9ERKgRYHoxZ";
 btn.addEventListener("click", getJoke);
 
 async function getJoke() {
+    btn.disabled = true;
     loadingPara.classList.add("visible");
     jokePara.innerText = "";
     try {
@@ -32,4 +33,5 @@ function displayJoke(result) {
 
     jokePara.innerText = result[0].joke;
     jokeContainer.append(jokePara);
+    btn.disabled = false;
 }
